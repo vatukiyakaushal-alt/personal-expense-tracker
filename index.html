@@ -1,0 +1,111 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Personal Expense Tracker</title>
+
+    <!-- Connect CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="container">
+
+        <!-- Header -->
+        <header>
+            <h1>Personal Expense Tracker</h1>
+            <p>Manage your money smartly!</p>
+        </header>
+
+        <!-- Total Balance -->
+        <section class="balance-box">
+            <h3>My Total Balance</h3>
+            <h1 id="balance">₹0.00</h1>
+        </section>
+
+        <!-- Income and Expense -->
+        <section class="summary">
+
+            <div class="card income">
+                <h3>Total Income</h3>
+                <h2 id="income">₹0.00</h2>
+            </div>
+
+            <div class="card expense">
+                <h3>Total Expenses</h3>
+                <h2 id="expense">₹0.00</h2>
+            </div>
+
+        </section>
+
+        <!-- Add Transaction -->
+        <section class="form-section">
+
+            <h2>Add New Transaction</h2>
+
+            <form id="transaction-form">
+
+                <input
+                    type="text"
+                    id="description"
+                    placeholder="Enter description"
+                    required
+                >
+
+                <input
+                    type="number"
+                    id="amount"
+                    placeholder="Enter amount"
+                    min="0.01"
+                    step="0.01"
+                    required
+                >
+
+                <select id="type">
+                    <option value="income">Income</option>
+                    <option value="expense">Expense</option>
+                </select>
+
+                <button type="submit">Add Transaction</button>
+
+            </form>
+
+        </section>
+
+        <!-- Expense Chart -->
+        <section class="chart-section">
+
+            <h2>Income & Expense Chart</h2>
+
+            <div class="chart-container">
+                <canvas id="expenseChart"></canvas>
+            </div>
+
+        </section>
+
+        <!-- Transaction History -->
+        <section class="history">
+
+            <h2>Transaction History</h2>
+
+            <ul id="transaction-list">
+                <li>No transactions yet.</li>
+            </ul>
+
+        </section>
+
+    </div>
+
+    <!-- Chart.js Library -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <!-- Connect JavaScript -->
+    <script src="script.js"></script>
+
+</body>
+</html>
